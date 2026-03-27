@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+:root {
+  font-family: 'Outfit', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Arka plana hafif bir gren (noise) dokusu ekleyerek dijital havayı kıralım */
+body {
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-attachment: fixed;
+}

@@ -20,6 +20,7 @@ export const PROJECTS = [
     title: "Hotel Management System",
     description: "Java Spring Boot mimarisiyle geliştirilen, PostgreSQL veri tabanı entegrasyonuna sahip uçtan uca otel yönetim paneli.",
     tags: ["Java", "Spring Boot", "PostgreSQL"],
+    technologies: ["React", "Node.js"],
     github: "https://github.com/talhaff/otel-yonetim-sistemi",
   },
   {
@@ -27,6 +28,7 @@ export const PROJECTS = [
     title: "Taptaze SaaS",
     description: "Restoranlar için modern QR kodlu sipariş yönetim sistemi. Node.js backend ve MongoDB Atlas bulut veritabanı yapısı.",
     tags: ["Node.js", "MongoDB", "Express"],
+    technologies: ["React", "Node.js"],
     github: "https://github.com/talhaozcan/taptaze",
   },
   {
@@ -34,6 +36,7 @@ export const PROJECTS = [
     title: "Minimalist Study Room",
     description: "Blender kullanarak tasarladığım, düşük poligonlu ve estetik odaklı 3D çalışma alanı tasarımı.",
     tags: ["Blender", "3D Design"],
+    technologies: ["Blender"],
     github: "#",
   }
 ];
