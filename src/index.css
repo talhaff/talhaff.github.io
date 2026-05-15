@@ -40,6 +40,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
