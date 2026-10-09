@@ -1,6 +1,6 @@
 # Talha Özcan | Computer Engineering Portfolio
 
-Bu proje, bir bilgisayar mühendisi adayı olarak geliştirdiğim sistemleri, teknik yetkinliklerimi ve vizyonumu sergileyen profesyonel bir portfolyo web sitesidir. Yazılım geliştirme süreçlerinde **SOLID** prensipleri ve **Temiz Kod (Clean Code)** standartları esas alınarak inşa edilmiştir.
+Bu proje, İnönü Üniversitesi Bilgisayar Mühendisliği mezunu (GPA: 3.25) olarak geliştirdiğim sistemleri, teknik yetkinliklerimi ve vizyonumu sergileyen profesyonel bir portfolyo web sitesidir. Yazılım geliştirme süreçlerinde **SOLID** prensipleri ve **Temiz Kod (Clean Code)** standartları esas alınarak inşa edilmiştir.
 
 🚀 **Canlı Demo: https://talhaff.github.io/
  

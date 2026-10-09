@@ -11,6 +11,7 @@
 
 :root {
   font-family: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   --bg-color: #f8fafc;
   --text-color: #0f172a;
   --text-muted: #475569;
@@ -21,6 +22,21 @@
   --gradient-start: #2563eb;
   --gradient-end: #7c3aed;
   color-scheme: light;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
 }
 
 .dark {

@@ -1,98 +1,191 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PERSONAL_INFO } from '../data/portfolio';
+import { PORTFOLIO_DATA } from '../data/portfolio';
 import { useTheme } from '../ThemeContext';
+import { useLanguage } from '../LanguageContext';
+import { sound } from '../utils/audio';
 
 const About = () => {
   const { theme } = useTheme();
+  const { language } = useLanguage();
+  const data = PORTFOLIO_DATA[language] || PORTFOLIO_DATA.tr;
 
   return (
-    <section id="about" className="max-w-6xl mx-auto px-6 py-12 md:py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+    <section id="about" className="py-20 md:py-32 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
-        {/* Metin Alanı */}
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/10 rounded-full -z-10 blur-3xl"></div>
-          <motion.span 
-            className="text-blue-600 dark:text-blue-400 font-bold tracking-[0.2em] uppercase text-sm mb-4 inline-block"
-          >
-            Hakkımda
-          </motion.span>
-          <h2 className={`text-4xl md:text-5xl font-extrabold mb-8 tracking-tight leading-tight ${theme === 'light' ? 'text-slate-950' : 'text-white'}`}>
-            Kim Bu <span className="text-gradient">{PERSONAL_INFO.name}?</span>
-          </h2>
-          <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6 text-lg font-light">
-            <p>
-              İnönü Üniversitesi Bilgisayar Mühendisliği son sınıf öğrencisiyim. Mühendisliği sadece kod yazmak değil, 
-              <strong className={`font-semibold ${theme === 'light' ? 'text-slate-950' : 'text-white'}`}> sürdürülebilir, ölçeklenebilir ve verimli sistemler</strong> kurmak olduğuna inanıyorum.
-            </p>
-            <p>
-              Teorik bilgiyi pratik dünyadaki gerçek problemlerle birleştirmeye odaklanıyorum. Özellikle 
-              <strong className={`font-semibold ${theme === 'light' ? 'text-slate-950' : 'text-white'}`}> yüksek performanslı backend sistemleri ve modern mobil deneyimler</strong> üzerine uzmanlaşıyorum.
-            </p>
-            
-            {/* Sosyal Linkler */}
-            <div className="flex gap-6 pt-6">
-              <a 
-                href={PERSONAL_INFO.github} 
-                target="_blank" 
-                className="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-all"
-              >
-                <span className="border-b-2 border-transparent group-hover:border-blue-600 transition-all">GitHub Profilim</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-              </a>
-              <a 
-                href={PERSONAL_INFO.linkedin} 
-                target="_blank" 
-                className="group flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold transition-all"
-              >
-                <span className="border-b-2 border-transparent group-hover:border-blue-600 transition-all">LinkedIn</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-              </a>
-            </div>
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-blue-500 font-mono font-bold tracking-[0.25em] uppercase text-xs sm:text-sm mb-3 inline-block"
+            >
+              {data.ui.aboutHeaderTag}
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight ${
+                theme === 'light' ? 'text-slate-950' : 'text-white'
+              }`}
+            >
+              {data.ui.aboutHeading1} <br />
+              <span className="text-gradient">{data.ui.aboutHeading2}</span>
+            </motion.h2>
           </div>
-        </motion.div>
 
-        {/* Bilgi Kartı Alanı */}
-        <motion.div 
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="glass rounded-[3rem] p-12 border border-slate-200 dark:border-slate-800 relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl" />
+          <p className={`max-w-md text-sm sm:text-base font-light leading-relaxed ${
+            theme === 'light' ? 'text-slate-600' : 'text-slate-400'
+          }`}>
+            {data.ui.aboutSub}
+          </p>
+        </div>
+
+        {/* Main 2-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           
-          <h3 className={`text-2xl font-bold mb-10 ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>Eğitim & Kariyer</h3>
-          <div className="space-y-12">
-            <div className="relative pl-8 border-l-2 border-blue-600">
-              <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 border-4 ${theme === 'light' ? 'border-slate-50' : 'border-slate-900'}`} />
-              <h4 className={`font-bold text-lg ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>Lisans Derecesi</h4>
-              <div className="flex items-center gap-3 mb-3">
-                <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">{PERSONAL_INFO.university} • 2022 - 2026</p>
-                <span className="px-2 py-0.5 bg-blue-500/10 border border-blue-500/20 rounded text-[10px] font-bold text-blue-600 dark:text-blue-300">GPA: {PERSONAL_INFO.gpa}</span>
+          {/* Left: Bio & Engineering Mindset */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`lg:col-span-6 p-6 sm:p-10 rounded-3xl sm:rounded-[2.5rem] glass border ${
+              theme === 'light' ? 'border-slate-200/80 bg-white/80' : 'border-white/10 bg-slate-950/80'
+            }`}
+          >
+            <h3 className={`text-2xl sm:text-3xl font-black mb-6 ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+              {data.ui.aboutTitle} <br />
+              <span className="text-gradient">{data.ui.aboutTitleGradient}</span>
+            </h3>
+
+            <div className={`space-y-4 text-sm sm:text-base leading-relaxed font-light ${
+              theme === 'light' ? 'text-slate-600' : 'text-slate-400'
+            }`}>
+              <p>{data.ui.aboutBio1}</p>
+              <p>{data.ui.aboutBio2}</p>
+              <p>{data.ui.aboutBio3}</p>
+            </div>
+
+            {/* Social Direct Badges */}
+            <div className="flex flex-wrap gap-3 sm:gap-4 pt-6 sm:pt-8 mt-6 border-t border-slate-400/10">
+              <a
+                href={data.personal.github}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => sound.playClick()}
+                className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl border font-mono text-xs font-bold flex items-center gap-2 transition-all ${
+                  theme === 'light'
+                    ? 'bg-slate-100 border-slate-200 text-slate-800 hover:border-blue-500'
+                    : 'bg-white/5 border-white/10 text-white hover:border-blue-500'
+                }`}
+              >
+                <span>{language === 'en' ? 'GitHub Profile' : 'GitHub Profilim'}</span>
+                <span>↗</span>
+              </a>
+
+              <a
+                href={data.personal.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => sound.playClick()}
+                className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-bold flex items-center gap-2 transition-all shadow-[0_4px_20px_rgba(37,99,235,0.3)]"
+              >
+                <span>{language === 'en' ? 'LinkedIn Connection' : 'LinkedIn Bağlantım'}</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right: Career & Academic Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`lg:col-span-6 p-6 sm:p-10 rounded-3xl sm:rounded-[2.5rem] glass border ${
+              theme === 'light' ? 'border-slate-200/80 bg-white/80' : 'border-white/10 bg-slate-950/80'
+            }`}
+          >
+            <h3 className={`text-2xl font-black mb-8 ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+              {data.ui.aboutTimelineTitle}
+            </h3>
+
+            <div className="space-y-8 relative pl-6 border-l-2 border-blue-500/30">
+              
+              {/* Item 1: Senkroon (Staj Tamamlandı) */}
+              <div className="relative">
+                <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-slate-950 shadow-[0_0_10px_rgba(37,99,235,0.8)]" />
+                <div className="flex justify-between items-center mb-1">
+                  <h4 className={`text-base font-bold ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+                    {data.ui.timelineSenkroonRole}
+                  </h4>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-bold border border-blue-500/20">
+                    {data.ui.timelineSenkroonStatus}
+                  </span>
+                </div>
+                <p className="text-xs font-mono text-blue-500 font-semibold mb-2">{data.ui.timelineSenkroonCompany}</p>
+                <p className={`text-xs font-light leading-relaxed ${theme === 'light' ? 'text-slate-600' : 'text-slate-400'}`}>
+                  {data.ui.timelineSenkroonDesc}
+                </p>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                Yazılım mimarisi, veri yapıları ve modern mühendislik prensipleri üzerine yoğunlaşmış akademik süreç.
-              </p>
+
+              {/* Item 2: İnönü Üniversitesi (Mezun) */}
+              <div className="relative">
+                <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-slate-950 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                <div className="flex justify-between items-center mb-1">
+                  <h4 className={`text-base font-bold ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+                    {data.ui.timelineInonuDegree}
+                  </h4>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold border border-emerald-500/20">
+                    {data.ui.timelineInonuStatus}
+                  </span>
+                </div>
+                <p className="text-xs font-mono text-emerald-400 font-semibold mb-2">
+                  {data.personal.university} • GPA: {data.personal.gpa} / 4.00
+                </p>
+                <p className={`text-xs font-light leading-relaxed ${theme === 'light' ? 'text-slate-600' : 'text-slate-400'}`}>
+                  {data.ui.timelineInonuDesc}
+                </p>
+              </div>
+
             </div>
-            
-            <div className={`relative pl-8 border-l-2 ${theme === 'light' ? 'border-slate-300' : 'border-slate-700'}`}>
-              <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-4 ${theme === 'light' ? 'bg-slate-300 border-slate-50' : 'bg-slate-700 border-slate-900'}`} />
-              <h4 className={`font-bold text-lg ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>Intern Software Developer</h4>
-              <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-3">Senkroon Yazılım • 2026 - Halen</p>
-              <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-                ERP ve CRM sistemleri üzerine geliştirme süreçleri. Fabrikalar için web tabanlı maliyet hesaplama ve verimlilik analizi uygulamaları tasarımı.
-              </p>
-            </div>
+          </motion.div>
+        </div>
+
+        {/* Engineering Principles Grid */}
+        <div>
+          <h3 className={`text-xl font-bold font-mono uppercase tracking-wider mb-6 text-center ${
+            theme === 'light' ? 'text-slate-800' : 'text-slate-200'
+          }`}>
+            {data.ui.principlesTitle}
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {data.principles.map((principle, idx) => (
+              <motion.div
+                key={principle.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08 }}
+                className={`p-6 rounded-2xl glass border transition-all hover:border-blue-500/40 ${
+                  theme === 'light' ? 'border-slate-200/80 bg-white/60' : 'border-white/5 bg-slate-950/40'
+                }`}
+              >
+                <div className="text-blue-500 font-mono text-xs font-bold mb-2">0{idx + 1}.</div>
+                <h4 className={`text-base font-bold mb-2 ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+                  {principle.title}
+                </h4>
+                <p className={`text-xs font-light leading-relaxed ${theme === 'light' ? 'text-slate-600' : 'text-slate-400'}`}>
+                  {principle.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
 
       </div>
     </section>
