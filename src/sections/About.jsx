@@ -57,6 +57,26 @@ const About = () => {
               theme === 'light' ? 'border-slate-200/80 bg-white/80' : 'border-white/10 bg-slate-950/80'
             }`}
           >
+            {/* Identity Emblem Badge */}
+            <div className="flex items-center gap-3.5 mb-6 pb-6 border-b border-slate-400/10">
+              <div className="relative group shrink-0">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 rounded-full blur-xs opacity-50 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src="/Talha-Ozcan-logo.png"
+                  alt="Talha Özcan Emblem"
+                  className="relative w-12 h-12 rounded-full border-2 border-blue-400/40 object-contain bg-slate-950 shadow-lg"
+                />
+              </div>
+              <div>
+                <span className="text-xs font-mono font-bold tracking-wider text-blue-500 dark:text-blue-400 block">
+                  TALHA ÖZCAN
+                </span>
+                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                  {language === 'en' ? 'Verified Engineering Identity' : 'Mühendislik Kimliği & Mimarisi'}
+                </span>
+              </div>
+            </div>
+
             <h3 className={`text-2xl sm:text-3xl font-black mb-6 ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
               {data.ui.aboutTitle} <br />
               <span className="text-gradient">{data.ui.aboutTitleGradient}</span>

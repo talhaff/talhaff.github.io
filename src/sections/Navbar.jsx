@@ -267,6 +267,24 @@ const Navbar = ({ onOpenTerminal }) => {
               </button>
 
               <div className="flex flex-col items-center gap-6 text-center w-full max-w-sm">
+                {/* Mobile Drawer Brand Logo */}
+                <div className="flex flex-col items-center gap-2 mb-2">
+                  <div className="relative flex items-center justify-center">
+                    <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 rounded-full blur-md opacity-60" />
+                    <img
+                      src="/Talha-Ozcan-logo.png"
+                      alt="Talha Özcan Logo"
+                      className="relative h-20 w-20 object-contain rounded-full border-2 border-blue-400 shadow-2xl bg-slate-950"
+                    />
+                  </div>
+                  <span className={`text-xl font-black tracking-tight ${theme === 'light' ? 'text-slate-900' : 'text-white'}`}>
+                    Talha <span className="text-gradient">Özcan</span>
+                  </span>
+                  <span className="text-xs font-mono font-bold tracking-wider text-blue-500 dark:text-blue-400">
+                    {currentData.personal.shortRole}
+                  </span>
+                </div>
+
                 {currentData.nav.map((link, index) => (
                   <motion.a
                     initial={{ opacity: 0, y: 15 }}

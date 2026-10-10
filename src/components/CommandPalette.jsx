@@ -262,7 +262,10 @@ const CommandPalette = ({ isOpen, onClose }) => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                 </div>
-                <span className="ml-3 text-xs font-bold text-slate-400 tracking-wider">talha@cloud-dev: ~</span>
+                <div className="ml-3 flex items-center gap-2">
+                  <img src="/favicon-32x32.png" alt="Logo" className="w-4 h-4 rounded-full border border-blue-400/40" />
+                  <span className="text-xs font-bold text-slate-400 tracking-wider">talha@cloud-dev: ~</span>
+                </div>
               </div>
 
               <div className="flex items-center gap-2 text-[10px] text-slate-400">

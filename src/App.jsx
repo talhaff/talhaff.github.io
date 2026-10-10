@@ -75,10 +75,19 @@ function MainApp() {
       >
         <div className="max-w-6xl mx-auto px-6 font-mono text-xs">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-blue-500" />
-              <span className="font-bold text-slate-700 dark:text-slate-300">Talha Özcan</span>
-              <span>— {isEn ? "Computer Engineer" : "Bilgisayar Mühendisi"}</span>
+            <div className="flex items-center gap-3">
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur-xs opacity-60 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src="/Talha-Ozcan-logo.png"
+                  alt="Talha Özcan Logo"
+                  className="relative w-8 h-8 rounded-full border border-blue-500/30 object-contain bg-slate-950/80"
+                />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-slate-800 dark:text-slate-200">Talha Özcan</span>
+                <span>— {isEn ? "Computer Engineer" : "Bilgisayar Mühendisi"}</span>
+              </div>
             </div>
 
             <div className="flex items-center gap-6 text-[11px] text-slate-500">
