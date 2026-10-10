@@ -1,4 +1,22 @@
+# robots.txt for https://talhaozcan.dev
+
 User-agent: *
 Allow: /
 
+# Explicit allow for search engine bots & image crawlers
+User-agent: Googlebot
+Allow: /
+Allow: /favicon.ico
+Allow: /Talha-Ozcan-logo.png
+Allow: /og-image.png
+Allow: /*.png
+Allow: /*.svg
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://talhaozcan.dev/sitemap.xml
+Host: https://talhaozcan.dev

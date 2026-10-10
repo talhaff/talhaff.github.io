@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://talhaozcan.dev/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://talhaozcan.dev/Talha-Ozcan-logo.png</image:loc>
+      <image:title>Talha Özcan | Bilgisayar Mühendisi Logo</image:title>
+      <image:caption>Talha Özcan - Bilgisayar Mühendisi ve Sistem Mimarı Resmi Logosu</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://talhaozcan.dev/og-image.png</image:loc>
+      <image:title>Talha Özcan | Bilgisayar Mühendisi Portfolyo</image:title>
+      <image:caption>Talha Özcan - Dağıtık Mimariler, Spring Boot, React, ERP Sistemleri</image:caption>
+    </image:image>
   </url>
 </urlset>

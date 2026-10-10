@@ -1,30 +1,46 @@
 {
-  "name": "Talha Özcan | Bilgisayar Mühendisi",
+  "name": "Talha Özcan | Bilgisayar Mühendisi & Sistem Mimarı",
   "short_name": "Talha Özcan",
+  "description": "Talha Özcan - Bilgisayar Mühendisi Portfolyo, Sistem Mimarileri ve Dağıtık Yazılım Çözümleri",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "categories": ["portfolio", "engineering", "technology"],
+  "lang": "tr",
   "icons": [
     {
       "src": "/favicon-48x48.png",
       "sizes": "48x48",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/favicon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ],
-  "theme_color": "#020617",
-  "background_color": "#020617",
-  "display": "standalone",
-  "start_url": "/"
+  ]
 }

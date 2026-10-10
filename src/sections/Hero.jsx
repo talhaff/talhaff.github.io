@@ -57,6 +57,9 @@ const Hero = ({ onOpenTerminal }) => {
             <h1 className={`text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.12] mb-5 ${
               theme === 'light' ? 'text-slate-950' : 'text-white'
             }`}>
+              <span className="block text-xs sm:text-sm md:text-base font-mono font-bold text-blue-500 mb-2.5 tracking-wider uppercase">
+                Talha Özcan • {data.personal.shortRole}
+              </span>
               {data.ui.heroTitle1} <br />
               <span className="text-gradient">{data.ui.heroTitle2}</span> {data.ui.heroTitle3}
             </h1>
