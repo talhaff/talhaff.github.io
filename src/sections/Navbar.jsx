@@ -106,7 +106,7 @@ const Navbar = ({ onOpenTerminal }) => {
         transition={{ duration: 0.35, ease: 'easeInOut' }}
         className="fixed top-0 left-0 right-0 z-[100] pointer-events-none"
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4 md:py-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 md:py-6 flex items-center justify-between">
           
           {/* Logo & Brand Identity (Mobile-Optimized) */}
           <motion.a
@@ -114,7 +114,7 @@ const Navbar = ({ onOpenTerminal }) => {
             onClick={() => sound.playClick()}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="pointer-events-auto flex items-center gap-2.5 sm:gap-4 md:gap-5 group relative p-1 sm:p-2 rounded-2xl sm:rounded-3xl transition-all max-w-[65%] sm:max-w-none"
+            className="pointer-events-auto flex items-center gap-3 sm:gap-4 md:gap-5 group relative p-1.5 sm:p-2 rounded-2xl sm:rounded-3xl transition-all max-w-[70%] sm:max-w-none"
           >
             {/* Ambient Glowing Halo Behind Logo */}
             <div className="relative flex items-center justify-center shrink-0">
@@ -122,7 +122,7 @@ const Navbar = ({ onOpenTerminal }) => {
               <img
                 src="/Talha-Ozcan-logo.png"
                 alt="Talha Özcan Logo"
-                className={`relative h-11 w-11 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain rounded-full border-2 transition-all duration-500 group-hover:border-blue-400 ${
+                className={`relative h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain rounded-full border-2 transition-all duration-500 group-hover:border-blue-400 ${
                   theme === 'light'
                     ? 'border-slate-300 shadow-md bg-white/90'
                     : 'border-white/20 shadow-xl bg-slate-950/90'
@@ -133,7 +133,7 @@ const Navbar = ({ onOpenTerminal }) => {
             {/* Brand Typography */}
             <div className="flex flex-col text-left min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className={`text-base sm:text-2xl md:text-3xl font-black tracking-tight leading-tight transition-colors truncate ${
+                <span className={`text-lg sm:text-2xl md:text-3xl font-black tracking-tight leading-tight transition-colors truncate ${
                   theme === 'light' ? 'text-slate-950' : 'text-white'
                 }`}>
                   Talha <span className="text-gradient">Özcan</span>
@@ -145,7 +145,7 @@ const Navbar = ({ onOpenTerminal }) => {
                 </span>
               </div>
               <div className="flex items-center gap-1 sm:gap-2 mt-0.5">
-                <span className="text-[10px] sm:text-xs md:text-sm font-mono font-bold tracking-wider text-blue-500 dark:text-blue-400 truncate">
+                <span className="text-[11px] sm:text-xs md:text-sm font-mono font-bold tracking-wider text-blue-500 dark:text-blue-400 truncate">
                   {currentData.personal.shortRole}
                 </span>
                 <span className="hidden sm:inline text-slate-400 text-xs">•</span>
